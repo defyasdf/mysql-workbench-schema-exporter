@@ -34,6 +34,8 @@ use MwbExporter\Validator\ChoiceValidator;
 class Formatter extends BaseFormatter
 {
     const CFG_ANNOTATION_PREFIX              = 'useAnnotationPrefix';
+    const CFG_EXTENDS_CLASS                  = 'extendsClass';
+    const CFG_PROPERTY_TYPEHINT              = 'propertyTypehint';
     const CFG_SKIP_GETTER_SETTER             = 'skipGetterAndSetter';
     const CFG_GENERATE_ENTITY_SERIALIZATION  = 'generateEntitySerialization';
     const CFG_GENERATE_EXTENDABLE_ENTITY     = 'generateExtendableEntity';
@@ -54,6 +56,8 @@ class Formatter extends BaseFormatter
             static::CFG_GENERATE_ENTITY_SERIALIZATION   => true,
             static::CFG_GENERATE_EXTENDABLE_ENTITY      => false,
             static::CFG_QUOTE_IDENTIFIER_STRATEGY       => static::QUOTE_IDENTIFIER_AUTO,
+            static::CFG_EXTENDS_CLASS                   => '',
+            static::CFG_PROPERTY_TYPEHINT               => false,
         ));
         $this->addValidators(array(
             static::CFG_QUOTE_IDENTIFIER_STRATEGY       => new ChoiceValidator(array(
